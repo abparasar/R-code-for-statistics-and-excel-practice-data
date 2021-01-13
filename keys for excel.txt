@@ -1,0 +1,33 @@
+
+
+ctr + up
+ctr + down
+ctr + left
+ctr + right
+
+ctr + n
+ctr+ pageup
+ctr +f/h
+
+ctr + shift + up/down/left/right
+
+alt,o,c,a
+alt,o,r,a
+alt,h,b,a
+alt,h,b,t
+alt,w,v,g
+
+alt,d,s,s
+
+ctr +shift +l
+
+alt, a,m
+
+alt,e,s,v/t/f
+
+ctr+shift +1/2/3/4/5
+
+f4 = freeze
+
+
+
