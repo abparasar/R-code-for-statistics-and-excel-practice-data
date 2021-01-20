@@ -163,6 +163,130 @@ y = letters
 z = 1.6666
 
 
-list = list(x,y,z)
+list = list(col1=x,col2=y,col3=z)
+
 list
+
 list[[2]][9]
+
+
+list[[1]][15]
+
+list$col2[5]
+
+# Data Frames Special kind of list with vectors of same length 
+
+
+x = 1:26
+y = letters
+
+df = data.frame(x,y)
+df
+
+View(df)
+names(df) = c('colx','coly')
+names(df)
+
+rownames(df) = paste0('R',1:26)
+
+rownames(df)
+
+dim(df)
+
+nrow(df)
+ncol(df)
+
+str(df)
+
+df$coly = as.character(df$coly)
+
+
+str(df)
+
+#get the data from .csv file
+#current working folder
+getwd()
+
+setwd('C://Users//HP//Desktop//edu//2_R-20200322T142441Z-001//R//Input Files')
+
+filedata = read.csv('CCData1.csv', stringsAsFactors = F)
+filedata
+
+head(filedata)
+
+
+# apply family
+
+
+x = matrix(c(1:16),4,4)
+x
+#1= row, 2= colum
+apply(x, 2,sum)
+
+#lapply
+
+A = matrix(1:9,3,3)
+B = matrix(4:15, 4,3)
+C = matrix(8:10, 3,2)
+
+mylist = list(A,B,C)
+mylist
+
+lapply(mylist, '[', 1,2)
+
+#sapply (same as lapply only the output looks better)
+
+
+sapply(mylist, '[', 1,2)
+
+
+
+library(dplyr) #select filter arrange mutate
+
+
+
+msleep = read.csv('mammals.csv', stringsAsFactors = F)
+
+View(msleep)
+str(msleep)
+glimpse(msleep)
+
+#select some columns
+
+head(select(msleep, name, sleep_total))
+
+head(select(msleep, -name))
+
+head(select(msleep, name:order))
+
+head(select(msleep, starts_with('sl')))
+
+
+#filter
+
+filter(msleep, sleep_total >= 16, bodywt >= 1)
+
+
+
+
+filter(msleep,order%in%c('Carnivora', 'Pilosa'))
+
+
+#arrange
+
+arrange(msleep, desc(order))
+#mutate
+
+mutate(msleep, new_col= sleep_total - sleep_rem)
+
+
+#pipe in dplyr
+
+head(select(msleep, name, sleep_total))
+
+
+msleep %>% select(name,sleep_total) %>% head
+
+msleep %>% arrange(order) %>% head
+
+table(msleep$vore)
