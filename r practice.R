@@ -332,6 +332,7 @@ getwd()
 
 cc = read.csv('Credit_Card_Data.csv')
 
+#vvip 4 functions 
 names(cc)
 View(cc)
 str(cc)
