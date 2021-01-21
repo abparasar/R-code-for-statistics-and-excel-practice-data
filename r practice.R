@@ -290,3 +290,80 @@ msleep %>% select(name,sleep_total) %>% head
 msleep %>% arrange(order) %>% head
 
 table(msleep$vore)
+
+
+
+library(lubridate)
+
+
+
+ymd('20170804')
+
+
+mdy('08-04-2017')
+
+dmy('04/08/2017')
+
+
+timeval = ymd_hms('2017-08-04 12:00:25', tz= 'Pacific/Auckland')
+timeval
+
+wday(timeval)
+
+wday(timeval, label = TRUE)
+
+
+
+leap_year(2016)
+
+
+
+ymd('20170804') + years(1)
+
+ymd('20170804') + dyears(1)
+
+
+parse_date_time('31-16-Oct 02:05 PM','%d-%y-%b %I:%M %p')
+
+#stats
+
+
+getwd()
+
+cc = read.csv('Credit_Card_Data.csv')
+
+names(cc)
+View(cc)
+str(cc)
+summary(cc)
+
+
+mean(cc$Number.of.Credit.Cards)
+median(cc$Number.of.Credit.Cards)
+
+mode(cc$Number.of.Credit.Cards)
+
+
+library(modeest)
+
+mlv(cc$Marital.Status.of.the.Customer)
+
+
+
+
+
+customsum = function(x,y) {
+  x + y
+}
+
+
+customsum(10,2)
+
+custommode = function(x){
+  ux = unique(x)
+  ux
+  ux[which.max(tabulate(match(x,ux)))]
+}
+
+
+custommode(cc$Marital.Status.of.the.Customer)
