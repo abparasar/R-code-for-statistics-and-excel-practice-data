@@ -332,7 +332,6 @@ getwd()
 
 cc = read.csv('Credit_Card_Data.csv')
 
-#vvip 4 functions 
 names(cc)
 View(cc)
 str(cc)
@@ -368,3 +367,84 @@ custommode = function(x){
 
 
 custommode(cc$Marital.Status.of.the.Customer)
+
+custommode(cc$Gender.of.the.Customer)
+
+
+cc = read.csv('Credit_Card_Data.csv')
+
+scc = summary(cc)
+
+
+# 1st argument is the value number 2nd argument is the column
+scc[4,1]
+
+sncc = summary(cc$Number.of.Credit.Cards)
+
+sncc
+sncc['Max.']
+
+median(c(7,8,9,10,11,12,13,300))
+
+mean(c(-100,-50, 10, 90,100))
+
+# spread 1: sd, var 2: range 3: IQR
+sd(c(7,8,9,10,11,12,13))
+
+sd(c(-100,-50, 10, 90,100))
+
+
+sd(cc$Number.of.Credit.Cards)
+
+var(cc$Number.of.Credit.Cards)
+
+
+sqrt(var(cc$Number.of.Credit.Cards))
+
+#range
+
+range(cc$Number.of.Credit.Cards)
+
+min(cc$Number.of.Credit.Cards)
+
+#max
+
+#IQR
+
+IQR(cc$Number.of.Credit.Cards)
+
+
+
+#mean absolute deviation
+mad(cc$Number.of.Credit.Cards)
+
+View(cc)
+
+tab1 = table(cc$Gender.of.the.Customer)
+
+round(prop.table(tab1),2)
+
+round(prop.table(tab1),2) *100
+
+
+freqd = table(cc$Number.of.Credit.Cards)
+freq
+
+barplot(freqd)
+
+
+
+cfreq = transform(freqd, cumFreq=cumsum(Freq))
+
+cfreq
+
+plot(cfreq$Var1,cfreq$cumFreq)
+
+
+skewness(cc$Number.of.Credit.Cards)
+
+
+boxplot(cc$Number.of.Credit.Cards)
+
+
+#hist
